@@ -1,0 +1,23 @@
+{
+    "manifest_version": 3,
+    "name": "Copilot Chrome Extension",
+    "version": "1.0",
+    "description": "Eine Chrome-Erweiterung, die als Co-Pilot für Webseiten fungiert.",
+    "permissions": [
+      "activeTab",
+      "scripting"
+    ],
+    "background": {
+      "service_worker": "dist/background.js"
+    },
+    "action": {
+      "default_popup": "dist/popup.html"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["dist/content.js"]
+      }
+    ]
+  }
+  
